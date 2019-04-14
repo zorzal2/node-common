@@ -1,7 +1,7 @@
 {
-  "name": "@zorzal2/hello-world",
+  "name": "@zorzal2/common",
   "version": "0.1.0",
-  "description": "Base para proyectos en typescript",
+  "description": "Algunas cosas que siempre son útiles",
   "main": "src/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -15,11 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zorzal2/typescript-empty-app.git"
+    "url": "git+https://github.com/zorzal2/node-common.git"
   },
-  "keywords": [
-    "logger"
-  ],
   "author": "jperez",
   "license": "ISC",
   "bugs": {

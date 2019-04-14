@@ -1,3 +1,3 @@
-import conf from './conf';
+import * as ZorzalErrorModule from './error';
 
-console.log(conf.hello);
+export const ZorzalError = ZorzalErrorModule.default;
