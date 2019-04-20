@@ -1,4 +1,4 @@
-export class ZorzalError extends Error {
+export class AppError extends Error {
 
   public readonly code: string;
   public readonly info?: any;
@@ -6,7 +6,7 @@ export class ZorzalError extends Error {
 
   constructor(message: string, code: string, info?: any, cause?: Error) {
     super(message);
-    this.name = 'ZorzalError';
+    this.name = 'AppError';
     this.code = code;
     this.info = info;
     this.cause = cause;

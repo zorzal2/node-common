@@ -1,3 +1,7 @@
-import * as ZorzalErrorModule from './error';
+import { AppError } from './error';
+import { complete } from './code';
 
-export const ZorzalError = ZorzalErrorModule.default;
+export default {
+  error: { AppError },
+  code: { complete }
+};

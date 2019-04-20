@@ -1,26 +1,26 @@
-import { ZorzalError } from '../src/error';
+import { AppError } from '../src/error';
 
-describe('ZorzalError', () => {
+describe('AppError', () => {
   test('toJSON', () => {
     let gerr = new TypeError('Generic error');
-    let zz1 = new ZorzalError('Zorzal error 1', 'zz1', { 'zz': 1 }, gerr);
-    let zz2 = new ZorzalError('Zorzal error 2', 'zz2', { 'zz': 2 }, zz1);
+    let app1 = new AppError('App error 1', 'app1', { 'app': 1 }, gerr);
+    let app2 = new AppError('App error 2', 'app2', { 'app': 2 }, app1);
 
-    let reconstructed = <ZorzalError>JSON.parse(JSON.stringify(zz2));
+    let reconstructed = <AppError>JSON.parse(JSON.stringify(app2));
 
-    expect(reconstructed.name).toBe('ZorzalError');
-    expect(reconstructed.message).toBe('Zorzal error 2');
-    expect(reconstructed.code).toBe('zz2');
+    expect(reconstructed.name).toBe('AppError');
+    expect(reconstructed.message).toBe('App error 2');
+    expect(reconstructed.code).toBe('app2');
     expect(reconstructed.stack).toBeTruthy();
-    expect(reconstructed.info.zz).toBe(2);
+    expect(reconstructed.info.app).toBe(2);
 
-    let cause = <ZorzalError>reconstructed.cause;
+    let cause = <AppError>reconstructed.cause;
 
-    expect(cause.name).toBe('ZorzalError');
-    expect(cause.message).toBe('Zorzal error 1');
+    expect(cause.name).toBe('AppError');
+    expect(cause.message).toBe('App error 1');
     expect(cause.stack).toBeTruthy();
-    expect(cause.code).toBe('zz1');
-    expect(cause.info.zz).toBe(1);
+    expect(cause.code).toBe('app1');
+    expect(cause.info.app).toBe(1);
 
     let causeOfCause = cause.cause;
 
