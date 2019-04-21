@@ -3,5 +3,6 @@ import { complete } from './code';
 
 export default {
   error: { AppError },
-  code: { complete }
+  code: { complete },
+  txid: { create: () => String(Math.random()).substr(2) }
 };
