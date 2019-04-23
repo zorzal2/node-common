@@ -1,4 +1,4 @@
-import { AppError } from '../src/error';
+import { AppError } from '../src';
 
 describe('AppError', () => {
   test('toJSON', () => {

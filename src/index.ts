@@ -1,8 +1,6 @@
-import { AppError } from './error';
-import { complete } from './code';
+export { AppError } from './error';
 
-export default {
-  error: { AppError },
-  code: { complete },
-  txid: { create: () => String(Math.random()).substr(2) }
-};
+import { complete } from './code';
+export const code = { complete };
+
+export const txid = { create: () => String(Math.random()).substr(2) };
